@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+abstract class shape{
+    double dim1,dim2;
+    Scanner sc = new Scanner(System.in);
+
+    public void accept(){
+        System.out.println("enter dimension 1");
+        dim1 = sc.nextDouble();
+        System.out.println("enter dimension 2");
+        dim2 = sc.nextDouble();
+    }
+
+    abstract void computeArea();
+}
+
+class triangle extends shape{
+    void computeArea(){
+       System.out.println("area of triangle is "+ 0.5 * dim1 * dim2);
+    }
+}
+
+class rectangle extends shape{
+    void computeArea(){
+       System.out.println("area of rect is "+ dim1 * dim2);
+    }
+}
+public class area {
+    public static void main(String args[]){
+        triangle t = new triangle();
+        t.accept();
+        t.computeArea();
+
+        rectangle r = new rectangle();
+        r.accept();
+        r.computeArea();
+    }
+    
+}

@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+class shape{
+    public double dim1,dim2;
+    Scanner sc = new Scanner(System.in);
+
+
+    public void computeArea(){
+
+    }
+
+    public void draw(){
+
+    }
+
+   
+}
+
+class triangle extends shape{
+    
+      public void draw(){
+    System.out.println("drawing triangle");
+    }
+    public void computeArea(){
+          System.out.println("enter dim1");
+        dim1 = sc.nextDouble();
+        System.out.println("enter dim2");
+        dim2 = sc.nextDouble();
+       System.out.println("area of triangle is "+ 0.5 * dim1 * dim2);
+    }
+}
+
+class circle extends shape{
+   
+    public void draw(){
+    System.out.println("drawing circle");
+    }
+
+    public void computeArea(){
+
+          System.out.println("enter dim1");
+        dim1 = sc.nextDouble();
+
+    System.out.println("area of circle is "+ (1.14 * dim1 * dim1));
+}}
+
+class square extends shape{
+
+    
+
+     public void draw(){
+    System.out.println("drawing sqaure");
+    }
+
+    public void computeArea(){
+         System.out.println("enter dim1");
+        dim1 = sc.nextDouble();
+
+       System.out.println("area of squ is "+ dim1 * dim1);
+    }
+}
+public class shape3 {
+    public static void main(String args[]){
+        circle t = new circle();
+        t.draw();
+        t.computeArea();
+
+        square r = new square();
+       r.draw();
+        r.computeArea();
+        
+
+        triangle z = new triangle();
+        z.draw();
+        z.computeArea();
+       
+    }
+    
+}
+

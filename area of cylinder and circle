@@ -33,7 +33,7 @@ class cylinder extends shape{
     }
 
     public void computeArea(){
-       System.out.println("area of cylinder is "+ (2 * 1.14 * r*r) + (2*1.14*h*r));
+       System.out.println("area of cylinder is "+ (2 * 3.14 * r*r) + (2*1.14*h*r));
     }
 }
 public class draw {

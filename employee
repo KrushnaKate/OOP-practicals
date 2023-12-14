@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+class employee{
+    protected String EmpName;
+    protected int EmpId;
+    protected String EmpAddress;
+    protected String MailId;
+    protected int MobNum;
+    protected double basicpay;
+    public double da,hra,pf,scf;
+    protected double NetSalary,GrossSalary;
+
+    Scanner sc = new Scanner (System.in);
+
+    public void accept(){
+        System.out.println("enter name ");
+        EmpName = sc.nextLine();
+
+        System.out.println("enter id");
+        EmpId = sc.nextInt();
+
+        System.out.println("enter adress");
+        EmpAddress = sc.nextLine();
+
+        System.out.println("enter mail id");
+        MailId = sc.nextLine();
+
+        System.out.println("enter number");
+        MobNum = sc.nextInt();
+
+        System.out.println("Enter salary");
+        basicpay = sc.nextDouble();
+    }
+
+    public void calc(){
+         da = 0.97 * basicpay;
+         hra = 0.10 * basicpay;
+         pf = 0.12 * basicpay;
+         scf = 0.01 * basicpay;
+
+        GrossSalary = basicpay + da + hra;
+        NetSalary = basicpay - pf - scf;
+    }
+
+    public void PaySlip(){
+        System.out.println("name: " + " " + EmpName);
+        System.out.println("Gross Salary: " + " " + GrossSalary);
+        System.out.println("Net salary: " + " " + NetSalary);
+    }
+}
+
+class Programmer extends employee{
+}
+
+class TeamLead extends employee{
+}
+
+class AssistantManager extends employee{ 
+}
+
+class ProjectManager extends employee{  
+}
+public class Employeedetails {
+    public static void main(String args []){
+        Programmer p = new Programmer();
+        System.out.println("enter programmer details ");
+        p.accept();
+        p.calc();
+        p.PaySlip();
+    }  
+}

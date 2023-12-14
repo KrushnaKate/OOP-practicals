@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+class BankAccount{
+    int money;
+    int balance;
+
+    Scanner sc = new Scanner(System.in);
+
+    public void deposit(){
+        System.out.println("enter amount to deposite ");
+        money = sc.nextInt();
+        balance += money;
+        System.out.println("deposited successefully");
+        System.out.println("available balance is " + balance);
+    }
+
+    public void withdraw(){
+
+    }
+}
+
+class SavingAcc extends BankAccount{
+    public void withdraw(){
+        System.out.println("enter amount to withdraw ");
+        money = sc.nextInt();
+        if(balance<=100){
+            System.out.println("balance should be atleast 100rs");
+        }
+        else if(balance<money){
+            System.out.println("not enough balance ");
+        }
+        else{
+        balance -= money;
+        System.out.println("debited");
+    }
+
+    System.out.println("available balance is " + balance);
+}
+}
+public class pesa {
+    public static void main(String args []){
+        SavingAcc b = new SavingAcc();
+        b.deposit();
+        b.withdraw();
+    } 
+}

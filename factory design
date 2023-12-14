@@ -1,0 +1,135 @@
+// Car.java (interface)
+public interface Car {
+    void allocateAccessories();
+    void assembleBody();
+    void paint();
+    void installWheels();
+    void addInterior();
+}
+
+// Hatchback.java (concrete class)
+public class Hatchback implements Car {
+    @Override
+    public void allocateAccessories() {
+        System.out.println("Allocating Hatchback Accessories");
+    }
+
+    @Override
+    public void assembleBody() {
+        System.out.println("Assembling Hatchback Body");
+    }
+
+    @Override
+    public void paint() {
+        System.out.println("Painting Hatchback");
+    }
+
+    @Override
+    public void installWheels() {
+        System.out.println("Installing Hatchback Wheels");
+    }
+
+    @Override
+    public void addInterior() {
+        System.out.println("Adding Hatchback Interior");
+    }
+}
+
+// Sedan.java (concrete class)
+public class Sedan implements Car {
+    @Override
+    public void allocateAccessories() {
+        System.out.println("Allocating Sedan Accessories");
+    }
+
+    @Override
+    public void assembleBody() {
+        System.out.println("Assembling Sedan Body");
+    }
+
+    @Override
+    public void paint() {
+        System.out.println("Painting Sedan");
+    }
+
+    @Override
+    public void installWheels() {
+        System.out.println("Installing Sedan Wheels");
+    }
+
+    @Override
+    public void addInterior() {
+        System.out.println("Adding Sedan Interior");
+    }
+}
+
+// SUV.java (concrete class)
+public class SUV implements Car {
+    @Override
+    public void allocateAccessories() {
+        System.out.println("Allocating SUV Accessories");
+    }
+
+    @Override
+    public void assembleBody() {
+        System.out.println("Assembling SUV Body");
+    }
+
+    @Override
+    public void paint() {
+        System.out.println("Painting SUV");
+    }
+
+    @Override
+    public void installWheels() {
+        System.out.println("Installing SUV Wheels");
+    }
+
+    @Override
+    public void addInterior() {
+        System.out.println("Adding SUV Interior");
+    }
+}
+
+// CarFactory.java
+public class CarFactory {
+    public Car createCar(String type) {
+        if ("Hatchback".equalsIgnoreCase(type)) {
+            return new Hatchback();
+        } else if ("Sedan".equalsIgnoreCase(type)) {
+            return new Sedan();
+        } else if ("SUV".equalsIgnoreCase(type)) {
+            return new SUV();
+        }
+        return null; // Return null or throw an exception for unknown types
+    }
+}
+
+// TestFactoryPattern.java
+public class TestFactoryPattern {
+    public static void main(String[] args) {
+        CarFactory carFactory = new CarFactory();
+
+        // Create a Hatchback
+        Car hatchback = carFactory.createCar("Hatchback");
+        assembleCar(hatchback);
+
+        // Create a Sedan
+        Car sedan = carFactory.createCar("Sedan");
+        assembleCar(sedan);
+
+        // Create an SUV
+        Car suv = carFactory.createCar("SUV");
+        assembleCar(suv);
+    }
+
+    private static void assembleCar(Car car) {
+        System.out.println("Assembling " + car.getClass().getSimpleName());
+        car.allocateAccessories();
+        car.assembleBody();
+        car.paint();
+        car.installWheels();
+        car.addInterior();
+        System.out.println("Assembly of " + car.getClass().getSimpleName() + " complete.\n");
+    }
+}

@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+class vehicle{
+    String make,model,fueltype;
+    int year,speed,time;
+    double fuelconsumed,efficiency,distance;
+
+    Scanner sc = new Scanner(System.in);
+    public void accept(){
+        System.out.println("Enter make " );
+        make = sc.nextLine();                 
+        System.out.println("Enter model "  );    
+        model = sc.nextLine();    
+        System.out.println("Enter  fueltype" ); 
+        fueltype = sc.nextLine();        
+        System.out.println("Enter year " );    
+        year = sc.nextInt();
+        System.out.println("enter maximum speed");
+        speed = sc.nextInt();
+        System.out.println("enter time requered to travel distance");
+        time = sc.nextInt();
+        System.out.println("enter fuel consumed ");
+        fuelconsumed = sc.nextDouble();     
+    }
+
+    public void display(){
+     System.out.println("make: "+ make);
+     System.out.println("model: " + model);
+     System.out.println("fueltype: " + fueltype); 
+     System.out.println("year: " + year);
+     System.out.println("distance travelled: " + distance + "km");
+     System.out.println("fuel efficiency: " + efficiency + "%");
+    }
+
+    public void maxspeed(){
+        System.out.println("maximum speed is " + speed);
+    }
+    public void calcEfficiency(){
+         distance = time * speed;
+    }
+    public void calcDistance(){
+        efficiency = (fuelconsumed / distance)*100;
+    }
+
+}
+
+class truck extends vehicle{
+}
+
+class car extends vehicle{
+}
+
+class motorbike extends vehicle{
+}
+
+public class Truckcarbike {
+    public static void main(String args []){
+
+    truck t = new truck();
+    System.out.println("enter details about truck");
+    System.out.println(" ");
+    t.accept();
+    t.calcDistance();
+    t.calcEfficiency();
+    t.maxspeed();
+    t.display();
+
+    car c = new car();
+    System.out.println("enter details about car");
+    System.out.println(" ");
+    c.accept();
+    c.calcDistance();
+    c.calcEfficiency();
+    c.maxspeed();
+    c.display();
+
+    motorbike m = new motorbike();
+    System.out.println("enter details about bike");
+    System.out.println(" ");
+    m.accept();
+    m.calcDistance();
+    m.calcEfficiency();
+    m.maxspeed();
+    m.display();
+    }
+}

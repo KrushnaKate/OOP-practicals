@@ -1,0 +1,78 @@
+class complex1{
+    double real,img;
+
+    complex1(){
+        real = 0;
+        img = 0;
+    }
+
+    complex1(double img,double real){
+        this.img = img;
+        this.real = real;
+    }
+
+    public complex1 add(complex1 n2){
+        complex1 temp = new complex1();
+        temp.real = this.real + n2.real;
+        temp.img = this.img + n2.img;
+        return temp;
+}
+
+    public complex1 sub(complex1 n2){
+        complex1 temp = new complex1();
+        temp.real = this.real + n2.real;
+        temp.img = this.img + n2.img;
+        return temp;
+}
+
+    public complex1 multi(complex1 n2){
+        complex1 temp = new complex1();
+        temp.real = this.real * n2.real - this.img * n2.img;
+
+        temp.img = this.real * n2.img + this.img * n2.real;
+
+        return temp;
+    }
+
+    public complex1 div(complex1 n2){
+        double divisor = n2.real * n2.real + n2.img + n2.img;
+        complex1 temp = new complex1();
+
+        temp.real = this.real * n2.real - this.img * n2.img;
+
+        temp.img = this.img * n2.real - this.real * n2.img;
+
+        return temp;
+    }
+
+    public void display(){
+        System.out.println(real + "+" + img + "i");
+    }
+}
+
+public class Complex {
+    public static void main(String args []){
+
+    complex1 n1 = new complex1(2,4);
+    complex1 n2 = new complex1(4,5);
+
+    complex1 addr,subr,multr,divr;
+
+    System.out.println("addition is ");
+    addr = n1.add(n2);
+    addr.display();
+
+    System.out.println("Substraction is ");
+
+    subr = n1.sub(n2);
+    subr.display();
+    
+    System.out.println("mult is ");
+    multr = n1.multi(n2);
+    multr.display();
+
+    System.out.println("div is ");
+    divr = n1.div(n2);
+    divr.display();
+}
+}

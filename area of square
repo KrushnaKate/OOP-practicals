@@ -41,7 +41,7 @@ class circle extends shape{
           System.out.println("enter dim1");
         dim1 = sc.nextDouble();
 
-    System.out.println("area of circle is "+ (1.14 * dim1 * dim1));
+    System.out.println("area of circle is "+ (3.14 * dim1 * dim1));
 }}
 
 class square extends shape{

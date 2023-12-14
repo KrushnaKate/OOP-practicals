@@ -1,0 +1,84 @@
+interface vehicle {
+    void GearChange(int newGear);
+    void speedChange(int increase);
+    void Breaks(int decrease);
+}
+
+class bicycle implements vehicle{
+    int gear = 1;
+    int speed = 0;
+
+    public void GearChange(int newGear){
+        gear = newGear;
+        System.out.println("bicycle Gear changed to " + gear);
+    }
+
+    public void speedChange(int increase){
+        speed += increase;
+        System.out.println("bicycle speed increased by " + speed);
+    }
+
+    public void Breaks(int decrease){
+        speed += decrease;
+        System.out.println("bicycle speed decreased by " + speed);
+    }
+}
+
+class bike implements vehicle{
+    int gear = 1;
+    int speed = 0;
+
+    public void GearChange(int newGear){
+        gear = newGear;
+        System.out.println("bike gear changed "+gear);
+    }
+
+     public void speedChange(int increase){
+        speed += increase;
+        System.out.println("bike speed increased by " + speed);
+    }
+
+    public void Breaks(int decrease){
+        speed += decrease;
+        System.out.println("bike speed decreased by " + speed);
+    }
+}
+
+class car implements vehicle{
+    int gear = 1;
+    int speed = 0;
+
+    public void GearChange(int newGear){
+        gear = newGear;
+        System.out.println("car Gear changed to " + gear);
+    }
+
+    public void speedChange(int increase){
+        speed += increase;
+        System.out.println("car speed increased by " + speed);
+    }
+
+    public void Breaks(int decrease){
+        speed += decrease;
+        System.out.println("car speed decreased by " + speed);
+    }
+}
+
+public class gaadi {
+    public static void main(String args []){
+        bicycle b = new bicycle();
+        b.GearChange(3);
+        b.speedChange(40);
+        b.Breaks(20);
+
+        bike b1 = new bike();
+        b1.GearChange(3);
+        b1.speedChange(40);
+        b1.Breaks(20);
+
+        car c = new car();
+        c.GearChange(3);
+        c.speedChange(40);
+        c.Breaks(20);
+    }
+}

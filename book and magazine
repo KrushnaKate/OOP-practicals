@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+class publication{
+    String title;
+    double price;
+    int copies;
+
+    Scanner sc = new Scanner(System.in);
+
+    publication(String title,double price){
+        this.title = title;
+        this.price = price;
+    }
+
+    public void SaleCopy(){
+        double totalsales = copies * price;
+        System.out.println("total sales of " + title +" " + totalsales);
+    }
+}
+
+class book extends publication{
+    String author;
+
+    public book(String title,double price,String author){
+        super(title,price);
+        this.author = author;
+    }
+
+    public void ordercopies(){
+        System.out.println("Enter how many copies of book you want to order ");
+        int orderedcopies = sc.nextInt();
+        copies += orderedcopies;
+        System.out.println("ordered book " + " " + title);
+    }
+}
+
+class mag extends publication{
+    int currentissue;
+
+    public mag(String title,double price,int currentissue){
+        super(title,price);
+        this.currentissue = currentissue;
+    }
+
+    public void orderqty(){
+        System.out.println("Enter how many copies of magazine you want to order ");
+        int orderedcoppies = sc.nextInt();
+        copies += orderedcoppies;
+        System.out.println("Ordered magazine " + title + " ");
+    }
+
+    public int receiveissue(){
+        return currentissue++;
+    }
+}
+
+public class BookAndMag {
+    public static void main(String args []){
+        book b = new book("lmao",200,"god");
+        b.ordercopies();
+        b.SaleCopy();
+
+        mag m = new mag("lol",69,7);
+        m.orderqty();
+        m.receiveissue();
+        m.SaleCopy();
+    }
+    
+}

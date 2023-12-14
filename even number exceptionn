@@ -1,0 +1,19 @@
+public class even {
+    public static void checkEvenNumber(int number) throws IllegalArgumentException {
+        if (number % 2 != 0) {
+            throw new IllegalArgumentException("Number must be even.");
+        } else {
+            System.out.println(number + " is an even number.");
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+           
+            checkEvenNumber(10);
+            checkEvenNumber(15);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+}
